@@ -14,25 +14,28 @@ pip3 install -r requirements.txt
 ```
 
 # Usage
-1. Clone this repo or zip download it.
-2. Install all the [dependencies](#dependencies)
-3. Download compatible [chromedriver](https://chromedriver.chromium.org/downloads) (according to your operating system)
-4. Copy the path where you have downloaded the chromedriver and run following command in the terminal or cmd:
-    - For Windows:
-        ```bash
-        set path=<path to your chromedriver>
-        ```
-    - For macos and linux
-         ```bash
-        export path=<path to your chromedriver>
-        ```
-5. Open a terminal or cmd at downloaded or cloned folder directory.
-```bash 
-python3 app.py
-```
-6. This step will start a flask server at the localhost port 3000, Now go to http://localhost:3000/
-7. Test the API using provided Swagger UI or make a postman GET request to http://127.0.0.1:3000/api/forexInfo/
+- Running it locally
+    1. Clone this repo or zip download it.
+    2. Install all the [dependencies](#dependencies)
+    3. Download compatible [chromedriver](https://chromedriver.chromium.org/downloads) (according to your operating system)
+    4. Copy the path where you have downloaded the chromedriver and run following command in the terminal or cmd:
+        - For Windows:
+            ```bash
+            set path=<path to your chromedriver>
+            ```
+        - For macos and linux
+             ```bash
+            export path=<path to your chromedriver>
+            ```
+    5. Open a terminal or cmd at downloaded or cloned folder directory.
+    ```bash 
+    python3 app.py
+    ```
+    6. This step will start a flask server at the localhost port 3000, Now go to http://localhost:3000/
+    7. Test the API using provided Swagger UI or make a postman GET request to http://127.0.0.1:3000/api/forexInfo/
 
+- Testing it on my Heroku server
+    - Please visit https://forex-rest-api.herokuapp.com/ to test the API
 # Output
 Output is sent back in json format, may look something like:
 ```json
