@@ -13,10 +13,14 @@ def fetch_html_source():
     """
 
     # Change the path to the driver accordingly
-    path = os.getenv('path')
+    chrome_options = webdriver.ChromeOptions()
+    chrome_options.binary_location = os.environ.get('chrome_bin')
+    chrome_options.add_argument('--headless')
+    chrome_options.add_argument('--disable-dev-shm-usage')
+    chrome_options.add_argument('--no-sandbox')
 
     # initial webdriver
-    driver = webdriver.Chrome(path)
+    driver = webdriver.Chrome(executable_path=os.environ.get('path'), chrome_options=chrome_options)
 
     # placing request to initial page
     driver.get("https://www.investing.com/currencies/single-currency-crosses")
