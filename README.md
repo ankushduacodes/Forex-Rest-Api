@@ -1,18 +1,20 @@
 # Forex-Rest-Api
+
 # Description
 Forex-Rest-Api is a simple Rest API which scraps the data from https://www.investing.com and sends it to the user whenever call to the API is made. Please visit https://forex-rest-api.herokuapp.com/ for quick testing
 
+------------------
 # Requirements
 - Python 3
 - pip3
 - compatible [chromedriver](https://chromedriver.chromium.org/downloads) (according to your operating system)
-
+-----------------
 # Dependencies
 To install all the dependencies of the project run the following command while in project directory
 ```bash
 pip3 install -r requirements.txt
 ```
-
+-------------------
 # Usage
 - Running it locally
     1. Clone this repo or zip download it.
@@ -36,6 +38,11 @@ pip3 install -r requirements.txt
 
 - Testing it on my Heroku server
     - Please visit https://forex-rest-api.herokuapp.com/ to test the API
+-----------------------
+# Design Decisions
+1. In forex_scraper/fetch_html_source.py file, I made the decision to select the Option via Value instead of index, Because the index is prone to change if a new currency is add or a currency is removed from the list. So for that reason choosing by Value made more sense to me.
+2. In forex_scraper/fetch_html_source.py file, I have implemented a design in which my webdriver waits for the specific content to load before scraping the page source and returning. I choose to do this because I saw that when we select an option from the select menu, The server loads that data via Ajax requests, Which means sometimes it takes just few seconds to completely load that data on the page. For that reason I wait on the web page until a specific content is not loaded up. If that particular content takes more than 10 seconds to load a timeout exception is raised (the time to be waited for can be increased to any arbitrary number) 
+----------------------
 # Output
 Output is sent back in json format, may look something like:
 ```json
@@ -142,5 +149,6 @@ Output is sent back in json format, may look something like:
   }
 }
 ```
+--------------
 ## Future Imporvements
 - [ ] Add JWT token authentication
