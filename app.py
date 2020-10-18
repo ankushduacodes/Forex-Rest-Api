@@ -16,19 +16,18 @@ class ForexInfo(Resource):
         Returns:
             JSON: Returns json response to the GET requests
         """
-        
+
         try:
-            with open('euro.html', 'w+') as file:
-                file.write(fetch_html_source())
+            forex = ForexScraper()
         except NotADirectoryError:
             return jsonify({'Message': 'Please make sure you have chromedriver installed and the path to the driver is'
                                        ' correct'})
         except TimeoutException:
-            return jsonify({'Message': 'Request timeout(Invensting.com servers took too much time to respond with '
+            return jsonify({'Message': 'Request timeout (Invensting.com servers took too much time to respond with '
                                        'requested information)'})
         except:
             return jsonify({'Message': 'Something went wrong'})
-        forex = ForexScraper()
+
         return jsonify(forex.get_info())
 
 

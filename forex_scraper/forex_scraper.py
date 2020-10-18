@@ -1,12 +1,13 @@
 from bs4 import BeautifulSoup
+from .fetch_html_source import fetch_html_source
 
 
 class ForexScraper:
-    """Scrapes the HTML source file created by fetch_html_source() function for the required info
+    """Scrapes the HTML source produced by fetch_html_source() function for the required info using beautiful soup
     """
 
     def __init__(self):
-        self.source = open('./euro.html', 'r')
+        self.source = fetch_html_source()
 
     def get_row(self, tbody, pair_id):
         """Scrapes required table row by its ID
