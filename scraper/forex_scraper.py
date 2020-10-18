@@ -35,7 +35,6 @@ class ForexScraper:
 
     def get_change_percent(self, row, class_str):
         class_str = class_str.split()
-        print(row.find('td', class_=class_str).get_text())
         return row.find('td', class_=class_str).get_text()
 
     def get_timestamp(self, row, class_str):
@@ -58,9 +57,6 @@ class ForexScraper:
         info_dict = {}
         for currency_data_tuple in currency_data_tuple_list:
             row = self.get_row(tbody, pair=f'pair_{currency_data_tuple[1]}')
-            print(row)
-            print(type(row))
-            print(currency_data_tuple)
             info_dict.update({currency_data_tuple[0]: self.get_currency_info(row, currency_data_tuple[1])})
         return info_dict
 
