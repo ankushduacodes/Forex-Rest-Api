@@ -15,6 +15,8 @@ api = Api(app, version='1.0.0', title='Forex Rest API', description='API that sc
                                                                     'Title\n- Bid\n- Ask\n- High\n- Low\n- Change\n- '
                                                                     'Change Percent\n- Timestamp')
 
+api = api.namespace()
+
 
 @api.route('/api/forexInfo/')
 class ForexInfo(Resource):
