@@ -5,7 +5,7 @@ from forex_scraper.forex_scraper import ForexScraper
 from selenium.common.exceptions import TimeoutException
 
 app = Flask(__name__)
-api = Api(app)
+api = Api(app, version='1.0.0', title='Forex Rest API', description='API that scrapes latest infomation from https://www.investing.com/currencies/single-currency-crosses about following currencies:\n1. EUR/USD\n2. USD/EUR\n3. EUR/JYP\n4. EUR/GBP\n5. EUR/AUD\n6. EUR/CAD\n7. EUR/CHF\n8. EUR/SEK\n9. EUR/NZD\n10. EUR/INR\n\nIt scrapes following information:\n- Title\n- Bid\n- Ask\n- High\n- Low\n- Change\n- Change Percent\n- Timestamp')
 
 
 @api.route('/api/forexInfo/')
