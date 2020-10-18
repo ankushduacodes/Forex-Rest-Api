@@ -2,7 +2,7 @@ import selenium
 from flask import Flask, jsonify
 from flask_restx import Api, Resource
 from source import fetch_html_source_file
-from scraper.forex_scraper import ForexScraper
+from forex_scraper.forex_scraper import ForexScraper
 from selenium.common.exceptions import TimeoutException
 
 app = Flask(__name__)
