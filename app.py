@@ -34,4 +34,4 @@ class ForexInfo(Resource):
 api.add_resource(ForexInfo, '/api/forexInfo/')
 
 if __name__ == '__main__':
-    app.run(port=3000)
+    app.run()
