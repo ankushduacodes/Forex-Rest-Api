@@ -28,7 +28,7 @@ pip3 install -r requirements.txt
         ```
 5. Open a terminal or cmd at downloaded or cloned folder directory.
 ```bash 
-flask run
+python3 app.py
 ```
 6. This step will start a flask server at the localhost port 3000, Now go to http://localhost:3000/
 7. Test the API using provided Swagger UI or make a postman GET request to http://127.0.0.1:3000/api/forexInfo/
