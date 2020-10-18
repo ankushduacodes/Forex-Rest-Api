@@ -1,6 +1,6 @@
 # Forex-Rest-Api
 # Description
-Forex-Rest-Api is a simple Rest API which scraps the data from https://www.investing.com and sends it to the user whenever call to the API is made
+Forex-Rest-Api is a simple Rest API which scraps the data from https://www.investing.com and sends it to the user whenever call to the API is made. Please visit https://forex-rest-api.herokuapp.com/ for quick testing
 
 # Requirements
 - Python 3
