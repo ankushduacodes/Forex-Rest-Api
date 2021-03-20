@@ -149,6 +149,3 @@ Output is sent back in json format, may look something like:
   }
 }
 ```
---------------
-## Future Imporvements
-- [ ] Add JWT token authentication
